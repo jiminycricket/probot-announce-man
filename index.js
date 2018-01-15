@@ -3,6 +3,7 @@ const httpRequest = require("request")
 const defaultConfig = require('./lib/defaultConfig')
 
 module.exports = (robot) => {
+  console.log("probot announce man is on!")
   robot.on('release', announceSlack);
 }
 
