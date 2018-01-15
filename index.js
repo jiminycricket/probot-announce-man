@@ -20,7 +20,7 @@ async function announceSlack (context) {
   const isPreRelease = release.prerelease;
   const releaseUrl = release.html_url;
 
-  if (isPreRelease && userConfig.enablePrelease === false) {
+  if (isPreRelease && config.enablePrelease === false) {
     // do nothing on pre release      
     return;
   }
@@ -35,8 +35,8 @@ more detail: ${releaseUrl}
     text: slackText
   };
   
-  if (userConfig.channel) {
-    slackPayloadObj.channel = userConfig.channel;
+  if (config.channel) {
+    slackPayloadObj.channel = config.channel;
   }
 
   httpRequest.post(slackWebhookUrl, {
